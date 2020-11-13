@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Tuple
 
 
 def mountain_scape(tops: List[Tuple[int, int]]) -> int:
