@@ -21,7 +21,6 @@ def make_random_tests(num):
                 y = randint(1, randint(10, 50))
             tops.append([x, y])
 
-        print(tops)
         random_tests.append({
             "input": tops,
             "answer": mountain_scape(tops)
