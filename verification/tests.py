@@ -10,6 +10,13 @@ from random import randint
 from my_solution import mountain_scape
 
 
+def test_formula1(height: int, nb_tops: int):
+    return {
+        'input': [(height + 2 * n, height) for n in range(nb_tops)],
+        'answer': height ** 2 + (2 * height - 1) * (nb_tops - 1),
+    }
+
+
 def make_random_tests(num):
     random_tests = []
     for _ in range(num):
@@ -29,6 +36,7 @@ def make_random_tests(num):
 
 
 TESTS = {
+    "Extra": [test_formula1(h, n) for h, n in ((3, 10), (5, 15), (10, 30))],
     "Randoms": make_random_tests(10),
     "Basics": [
         {
