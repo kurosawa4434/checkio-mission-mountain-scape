@@ -17,15 +17,16 @@ def test_formula1(height: int, nb_tops: int):
     }
 
 
-def make_random_tests(num):
+def make_random_tests(*top_nums):
     random_tests = []
-    for _ in range(num):
+    max_height = 50
+    for num in top_nums:
         tops = []
-        for _ in range(randint(3, 50)):
+        for _ in range(num):
             x, y = 0, 1
             while (x + y) % 2:
                 x = randint(0, 100)
-                y = randint(1, randint(10, 50))
+                y = randint(1, randint(2, max_height+1))
             tops.append([x, y])
 
         random_tests.append({
@@ -37,7 +38,7 @@ def make_random_tests(num):
 
 TESTS = {
     "Extra": [test_formula1(h, n) for h, n in ((3, 10), (5, 15), (10, 30))],
-    "Randoms": make_random_tests(10),
+    "Randoms": make_random_tests(1, 2, 3, 4, 5, 6, 7, 10, 15, 20, 25, 30, 35, 40, 45, 50, 50, 50, 50, 50),
     "Basics": [
         {
             "input": [[1, 1], [4, 2], [7, 3]],
