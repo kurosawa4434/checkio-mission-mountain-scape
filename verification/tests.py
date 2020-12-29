@@ -26,7 +26,7 @@ def make_random_tests(*top_nums):
             x, y = 0, 1
             while (x + y) % 2:
                 x = randint(0, 100)
-                y = randint(1, randint(2, max_height+1))
+                y = randint(1, randint(2, max_height))
             tops.append([x, y])
 
         random_tests.append({
